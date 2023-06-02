@@ -16,7 +16,16 @@ pipeline {
    sh 'docker build -t geetha0914/helthcare123:helthcareproject1.0 .'
    }
    }
+   stage('dockerpush'){
+   steps {
+   withCredentials([usernamePassword(credentialsId: 'Dockerhub', passwordVariable: 'dockerhubpassword', usernameVariable: 'dockerhubuser')]) {
+   sh "docker login -u ${env.dockerhubuser} -p ${env.dockerhubPassword}"
+   }
+   sh 'docker push geetha0914/helthcare123'
    }
    }
+   }
+   }
+   
     
 
