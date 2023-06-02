@@ -13,7 +13,7 @@ pipeline {
     }
    stage('dockerimage creation'){
    steps {
-   sh 'docker build -t geetha0914/helthcare123:helthcareproject1.0  .'
+   sh 'docker build -t geetha0914/helthcare123:helthcareproject1.0 .'
    }
    }
    }
